@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $usuario = $_POST['usuario'] ?? '';
 $password = $_POST['password'] ?? '';
 
@@ -8,6 +9,11 @@ $password = $_POST['password'] ?? '';
 if(($usuario !== "" && $password == "1234") ) {
     // Guardar usuario en sesión
     $_SESSION["usuario"] = $usuario;
+
+        // Inicializar array de contadores si no existe
+    if (!isset($_SESSION["contador"])) {
+        $_SESSION["contador"] = [];
+    }
 
     // Inicializar contador si no existe
     if (!isset($_SESSION["contador"][$usuario])) {

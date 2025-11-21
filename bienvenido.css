@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --verde-neon: #33ff00;
+    --fondo: #0f0f0f;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: var(--fondo);
+    color: var(--verde-neon);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 0;
+}
+
+.contenedor-bienvenido {
+    background-color: #111;
+    border: 4px solid var(--verde-neon);
+    border-radius: 8px;
+    padding: 30px;
+    width: 95%;
+    max-width: 800px;
+    box-shadow: 0 0 15px var(--verde-neon);
+    animation: saltito 1.5s infinite ease-in-out;
+}
+
+@keyframes saltito {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #000;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 2px solid var(--verde-neon);
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #000;
+}
+
+a.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: var(--verde-neon);
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+a.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--verde-neon);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 600px) {
+    .contenedor-bienvenido {
+        width: 95%;
+        padding: 20px;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 0.7em;
+    }
+}

@@ -30,20 +30,18 @@ if (isset($_SESSION['usuario'])) {
             <label for="usuario">Usuario
                 <input type="text" name="usuario" id="usuario" placeholder="Usuario / Email" required>
             </label>
-            
+
             <label for="contraseña">Contraseña
                 <input type="password" name="password" id="pass1" placeholder="contraseña" required>
             </label>
-            
-<p id="mensaje">
-<?php
-if (isset($_GET['error']) && $_GET['error'] == 1) {
-    echo "Usuario o contraseña incorrectos";
-}
-?>
 
-
-</p>
+            <p id="mensaje">
+                <?php
+                if (isset($_GET['error']) && $_GET['error'] == 1) {
+                    echo "Usuario o contraseña incorrectos";
+                }
+                ?>
+            </p>
             <input type="submit" name="accion" value="Entrar">
             <input type="submit" name="accion" value="Registrarse">
 
