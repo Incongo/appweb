@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --verde-neon: #33ff00;
+  --fondo: #0f0f0f;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: var(--fondo);
+  color: var(--verde-neon);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.formulario-container {
+  background-color: #111;
+  border: 4px solid var(--verde-neon);
+  border-radius: 8px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px var(--verde-neon);
+  animation: saltito 1.5s infinite ease-in-out;
+}
+
+@keyframes saltito {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 0.8em;
+  text-align: left;
+}
+
+input {
+  padding: 10px;
+  font-size: 0.8em;
+  background-color: #000;
+  color: var(--verde-neon);
+  border: 2px solid var(--verde-neon);
+  border-radius: 4px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--verde-neon);
+}
+
+/* Invertir el color del calendario y el cursor al pasar por encima */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+button {
+  padding: 12px;
+  font-size: 0.9em;
+  background-color: var(--verde-neon);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--verde-neon);
+}
+
+#mensaje {
+  margin-top: 15px;
+  font-size: 0.8em;
+  color: rgb(255, 0, 0);
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.error-shake {
+  animation: shake 0.4s;
+  border-color: red !important;
+  box-shadow: 0 0 10px red;
+}
+
+
+/* 📱 Responsivo para móviles */
+@media (max-width: 600px) {
+    .formulario-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  input, button {
+    font-size: 0.7em;
+    padding: 8px;
+  }
+}
+
+/* 📱 Responsivo para tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    body{
+        font-family: 'Press Start 2P', cursive;
+    }
+  .formulario-container {
+    width: 80%;
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 1.1em;
+  }
+
+  input, button {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+}
